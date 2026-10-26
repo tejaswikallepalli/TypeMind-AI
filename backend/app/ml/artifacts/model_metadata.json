@@ -1,0 +1,245 @@
+{
+  "model_name": "TypeMind_PatternClassifier",
+  "model_version": "1.0.0",
+  "model_architecture": "RandomForestClassifier",
+  "trained_at": "2026-10-26T12:41:34.306095+00:00",
+  "dataset_info": {
+    "path": "C:\\Users\\viswa\\Desktop\\TypeMindAI\\datasets\\type_patterns_dataset.json",
+    "total_samples": 42,
+    "train_samples": 31,
+    "test_samples": 11,
+    "origin": "synthetic",
+    "class_imbalance": {
+      "argument_count_mismatch": 5,
+      "argument_type_mismatch": 5,
+      "incompatible_return": 5,
+      "invalid_assignment": 5,
+      "no_error": 10,
+      "type_mismatch": 6,
+      "unsupported_operand": 6
+    }
+  },
+  "training_config": {
+    "test_size": 0.25,
+    "random_state": 42
+  },
+  "features": {
+    "count": 47,
+    "names": [
+      "args_count",
+      "args_count_diff",
+      "ast_depth",
+      "expected_args_count",
+      "expected_type=bool",
+      "expected_type=float",
+      "expected_type=int",
+      "expected_type=list",
+      "expected_type=n/a",
+      "expected_type=str",
+      "expected_type=tuple",
+      "has_defaults",
+      "has_param_annotations",
+      "has_return_annotation",
+      "has_type_mismatch",
+      "has_unknown_type",
+      "is_constant_literal",
+      "is_in_function",
+      "is_malformed",
+      "left_type=None",
+      "left_type=Unknown",
+      "left_type=float",
+      "left_type=n/a",
+      "left_type=str",
+      "node_type=AnnAssign",
+      "node_type=BinOp",
+      "node_type=Call",
+      "node_type=Return",
+      "num_lines",
+      "observed_type=None",
+      "observed_type=Unknown",
+      "observed_type=bool",
+      "observed_type=dict",
+      "observed_type=float",
+      "observed_type=int",
+      "observed_type=list",
+      "observed_type=n/a",
+      "observed_type=str",
+      "observed_type=tuple",
+      "operator=Add",
+      "operator=Mult",
+      "operator=None",
+      "right_type=Unknown",
+      "right_type=int",
+      "right_type=list",
+      "right_type=n/a",
+      "right_type=str"
+    ]
+  },
+  "classes": [
+    "argument_count_mismatch",
+    "argument_type_mismatch",
+    "incompatible_return",
+    "invalid_assignment",
+    "no_error",
+    "type_mismatch",
+    "unsupported_operand"
+  ],
+  "evaluation": {
+    "chosen_model": {
+      "model": "RandomForestClassifier",
+      "precision_macro": 0.6190476190476192,
+      "recall_macro": 0.6904761904761906,
+      "f1_macro": 0.619047619047619,
+      "f1_weighted": 0.606060606060606
+    },
+    "baseline_comparison": {
+      "LogisticRegression": {
+        "model": "LogisticRegression",
+        "precision_macro": 0.6666666666666666,
+        "recall_macro": 0.6904761904761906,
+        "f1_macro": 0.6142857142857142,
+        "f1_weighted": 0.6151515151515151
+      },
+      "RandomForestClassifier": {
+        "model": "RandomForestClassifier",
+        "precision_macro": 0.6190476190476192,
+        "recall_macro": 0.6904761904761906,
+        "f1_macro": 0.619047619047619,
+        "f1_weighted": 0.606060606060606
+      }
+    },
+    "per_class_metrics": {
+      "argument_count_mismatch": {
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1-score": 0.6666666666666666,
+        "support": 1.0
+      },
+      "argument_type_mismatch": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 1.0
+      },
+      "incompatible_return": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 1.0
+      },
+      "invalid_assignment": {
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1-score": 0.6666666666666666,
+        "support": 1.0
+      },
+      "no_error": {
+        "precision": 0.3333333333333333,
+        "recall": 0.3333333333333333,
+        "f1-score": 0.3333333333333333,
+        "support": 3.0
+      },
+      "type_mismatch": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 2.0
+      },
+      "unsupported_operand": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1-score": 0.6666666666666666,
+        "support": 2.0
+      },
+      "accuracy": 0.6363636363636364,
+      "macro avg": {
+        "precision": 0.6190476190476192,
+        "recall": 0.6904761904761906,
+        "f1-score": 0.619047619047619,
+        "support": 11.0
+      },
+      "weighted avg": {
+        "precision": 0.6363636363636364,
+        "recall": 0.6363636363636364,
+        "f1-score": 0.606060606060606,
+        "support": 11.0
+      }
+    },
+    "confusion_matrix": {
+      "labels": [
+        "argument_count_mismatch",
+        "argument_type_mismatch",
+        "incompatible_return",
+        "invalid_assignment",
+        "no_error",
+        "type_mismatch",
+        "unsupported_operand"
+      ],
+      "matrix": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,101 @@
+/**
+ * TypeMind AI — Design Tokens and Color System
+ * Premium developer-tool aesthetic matching visual design reference.
+ * Deep navy and charcoal backgrounds with electric-blue, cyan, and violet accents.
+ */
+
+:root {
+  /* Canvas & Surface Palette */
+  --bg-canvas: #080b14;
+  --bg-sidebar: #0c1020;
+  --bg-surface: #10162a;
+  --bg-card: #131b33;
+  --bg-card-hover: #182240;
+  --bg-elevated: #1a2546;
+  --bg-input: #0a0e1c;
+  --bg-subtle: rgba(255, 255, 255, 0.03);
+
+  /* Primary Accents - Purple / Violet / Indigo / Cyan */
+  --accent-purple: #7c3aed;
+  --accent-purple-light: #a855f7;
+  --accent-purple-glow: rgba(124, 58, 237, 0.25);
+  --accent-purple-border: rgba(124, 58, 237, 0.4);
+
+  --accent-cyan: #06b6d4;
+  --accent-cyan-light: #22d3ee;
+  --accent-cyan-glow: rgba(6, 182, 212, 0.2);
+
+  --accent-blue: #3b82f6;
+  --accent-blue-light: #60a5fa;
+
+  /* Primary Gradient */
+  --gradient-primary: linear-gradient(135deg, #7c3aed 0%, #6366f1 50%, #3b82f6 100%);
+  --gradient-primary-hover: linear-gradient(135deg, #8b5cf6 0%, #4f46e5 50%, #2563eb 100%);
+  --gradient-banner: linear-gradient(135deg, #131b36 0%, #1e1b4b 45%, #0f172a 100%);
+  --gradient-badge: linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(6, 182, 212, 0.15));
+
+  /* Severity & Diagnostic Card Colors */
+  --color-error: #ef4444;
+  --color-error-light: #f87171;
+  --color-error-bg: #1c111c;
+  --color-error-border: #7f1d1d;
+  --color-error-glow: rgba(239, 68, 68, 0.15);
+
+  --color-warning: #f59e0b;
+  --color-warning-light: #fbbf24;
+  --color-warning-bg: #1e1710;
+  --color-warning-border: #78350f;
+  --color-warning-glow: rgba(245, 158, 11, 0.15);
+
+  --color-success: #10b981;
+  --color-success-light: #34d399;
+  --color-success-bg: #0d1e17;
+  --color-success-border: #065f46;
+
+  --color-info: #3b82f6;
+  --color-info-light: #60a5fa;
+  --color-info-bg: #0e172a;
+  --color-info-border: #1e3a8a;
+
+  /* Text & Typography */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-faint: #475569;
+  --text-code: #e2e8f0;
+
+  /* Syntax Highlighting Colors */
+  --syntax-keyword: #c084fc;
+  --syntax-function: #facc15;
+  --syntax-string: #34d399;
+  --syntax-number: #fb923c;
+  --syntax-comment: #64748b;
+  --syntax-type: #38bdf8;
+  --syntax-operator: #f43f5e;
+
+  /* Borders & Dividers */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.14);
+  --border-active: rgba(124, 58, 237, 0.5);
+
+  /* Fonts */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', Consolas, monospace;
+
+  /* Sizing, Radius & Shadows */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.6);
+  --shadow-purple-glow: 0 0 20px rgba(124, 58, 237, 0.3);
+
+  /* Dimensions */
+  --topbar-height: 58px;
+  --sidebar-width: 230px;
+}

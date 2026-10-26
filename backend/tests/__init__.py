@@ -1,0 +1,1 @@
+"""TypeMind AI test suite."""

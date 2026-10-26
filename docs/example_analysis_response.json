@@ -1,0 +1,305 @@
+{
+  "status": "success",
+  "syntax_error": null,
+  "findings": [
+    {
+      "id": "TM005-cfeaa65a",
+      "message": "Function 'compute_total' has return type annotation 'float', but returns incompatible type 'str'.",
+      "category": "incompatible_return",
+      "severity": "error",
+      "location": {
+        "file_path": "demo_semantic_analysis.py",
+        "line": 6,
+        "column": 9,
+        "end_line": 6,
+        "end_column": 34
+      },
+      "origin": "rule_based",
+      "is_confirmed": true,
+      "expected_type": {
+        "raw_type": "float",
+        "is_inferred": false,
+        "type_args": [],
+        "confidence": null,
+        "notes": null
+      },
+      "observed_type": {
+        "raw_type": "str",
+        "is_inferred": false,
+        "type_args": [],
+        "confidence": null,
+        "notes": null
+      },
+      "ml_prediction": null,
+      "rule_id": "TM005_INCOMPATIBLE_RETURN",
+      "suggested_fixes": [
+        {
+          "id": "fix-return-cast-247b146f",
+          "title": "Cast return expression to float",
+          "description": "Cast returned value to match declared return annotation 'float'.",
+          "replacements": [
+            {
+              "location": {
+                "file_path": "demo_semantic_analysis.py",
+                "line": 6,
+                "column": 9,
+                "end_line": 6,
+                "end_column": 34
+              },
+              "new_text": "float(return \"Invalid tax rate\")",
+              "description": "Cast value to float"
+            }
+          ],
+          "confidence": 0.85,
+          "is_auto_applicable": false,
+          "diff_preview": "- return \"Invalid tax rate\"\n+ float(return \"Invalid tax rate\")",
+          "requires_user_review": true
+        }
+      ],
+      "explanation": "The value returned by this function conflicts with the return type annotation declared in the function header. Expected type 'float', but observed 'str'. Provenance: Deterministically verified by AST semantic checking rules."
+    },
+    {
+      "id": "TM001-2db67c50",
+      "message": "Cannot concatenate 'str' and 'int' using the '+' operator.",
+      "category": "type_mismatch",
+      "severity": "error",
+      "location": {
+        "file_path": "demo_semantic_analysis.py",
+        "line": 12,
+        "column": 16,
+        "end_line": 12,
+        "end_column": 40
+      },
+      "origin": "rule_based",
+      "is_confirmed": true,
+      "expected_type": {
+        "raw_type": "str",
+        "is_inferred": false,
+        "type_args": [],
+        "confidence": null,
+        "notes": null
+      },
+      "observed_type": {
+        "raw_type": "int",
+        "is_inferred": false,
+        "type_args": [],
+        "confidence": null,
+        "notes": null
+      },
+      "ml_prediction": null,
+      "rule_id": "TM001_STRING_NUMBER_CONCAT",
+      "suggested_fixes": [
+        {
+          "id": "fix-concat-315bf7f3",
+          "title": "Convert int operand to str",
+          "description": "Wrap expression with str() to allow string concatenation.",
+          "replacements": [
+            {
+              "location": {
+                "file_path": "demo_semantic_analysis.py",
+                "line": 12,
+                "column": 31,
+                "end_line": 12,
+                "end_column": 40
+              },
+              "new_text": "str(order_num)",
+              "description": "Convert operand to string"
+            }
+          ],
+          "confidence": 0.98,
+          "is_auto_applicable": true,
+          "diff_preview": null,
+          "requires_user_review": true
+        }
+      ],
+      "explanation": "An expression combines incompatible data types where Python requires matching or explicitly convertible types. Expected type 'str', but observed 'int'. Provenance: Deterministically verified by AST semantic checking rules."
+    },
+    {
+      "id": "TM002-a736ce90",
+      "message": "Unsupported operand types for -: 'str' and 'str'.",
+      "category": "unsupported_operand",
+      "severity": "error",
+      "location": {
+        "file_path": "demo_semantic_analysis.py",
+        "line": 18,
+        "column": 16,
+        "end_line": 18,
+        "end_column": 37
+      },
+      "origin": "rule_based",
+      "is_confirmed": true,
+      "expected_type": {
+        "raw_type": "numeric",
+        "is_inferred": false,
+        "type_args": [],
+        "confidence": null,
+        "notes": null
+      },
+      "observed_type": {
+        "raw_type": "str",
+        "is_inferred": false,
+        "type_args": [],
+        "confidence": null,
+        "notes": null
+      },
+      "ml_prediction": null,
+      "rule_id": "TM002_UNSUPPORTED_ARITHMETIC",
+      "suggested_fixes": [],
+      "explanation": "The requested operator is not implemented for the specified operand types. Python does not support arithmetic or sequence operations across these types. Expected type 'numeric', but observed 'str'. Provenance: Deterministically verified by AST semantic checking rules."
+    },
+    {
+      "id": "TM003-012daf55",
+      "message": "Function 'compute_total' expects at least 2 arguments, but only 1 were provided.",
+      "category": "argument_count_mismatch",
+      "severity": "error",
+      "location": {
+        "file_path": "demo_semantic_analysis.py",
+        "line": 21,
+        "column": 5,
+        "end_line": 21,
+        "end_column": 25
+      },
+      "origin": "rule_based",
+      "is_confirmed": true,
+      "expected_type": null,
+      "observed_type": null,
+      "ml_prediction": null,
+      "rule_id": "TM003_ARGUMENT_COUNT_MISMATCH",
+      "suggested_fixes": [],
+      "explanation": "The number of positional arguments provided does not match the parameters defined in the function signature. Specific type annotations are not available for this expression. Provenance: Deterministically verified by AST semantic checking rules."
+    },
+    {
+      "id": "TM004-3c9d9488",
+      "message": "Argument 'order_num' of function 'format_order_id' expected type 'int', but received incompatible type 'str'.",
+      "category": "argument_type_mismatch",
+      "severity": "error",
+      "location": {
+        "file_path": "demo_semantic_analysis.py",
+        "line": 24,
+        "column": 28,
+        "end_line": 24,
+        "end_column": 42
+      },
+      "origin": "rule_based",
+      "is_confirmed": true,
+      "expected_type": {
+        "raw_type": "int",
+        "is_inferred": false,
+        "type_args": [],
+        "confidence": null,
+        "notes": null
+      },
+      "observed_type": {
+        "raw_type": "str",
+        "is_inferred": false,
+        "type_args": [],
+        "confidence": null,
+        "notes": null
+      },
+      "ml_prediction": null,
+      "rule_id": "TM004_ARGUMENT_TYPE_MISMATCH",
+      "suggested_fixes": [],
+      "explanation": "An argument provided to the function call does not conform to the parameter's declared type annotation. Expected type 'int', but observed 'str'. Provenance: Deterministically verified by AST semantic checking rules."
+    },
+    {
+      "id": "TM006-bf1ea77c",
+      "message": "Cannot assign value of type 'str' to variable 'active_count' annotated as 'int'.",
+      "category": "invalid_assignment",
+      "severity": "error",
+      "location": {
+        "file_path": "demo_semantic_analysis.py",
+        "line": 27,
+        "column": 5,
+        "end_line": 27,
+        "end_column": 33
+      },
+      "origin": "rule_based",
+      "is_confirmed": true,
+      "expected_type": {
+        "raw_type": "int",
+        "is_inferred": false,
+        "type_args": [],
+        "confidence": null,
+        "notes": null
+      },
+      "observed_type": {
+        "raw_type": "str",
+        "is_inferred": false,
+        "type_args": [],
+        "confidence": null,
+        "notes": null
+      },
+      "ml_prediction": null,
+      "rule_id": "TM006_INVALID_ANNOTATED_ASSIGNMENT",
+      "suggested_fixes": [
+        {
+          "id": "fix-ann-update-693bc586",
+          "title": "Update type annotation to str or Union",
+          "description": "Align the variable annotation with assigned expression type 'str' or use Union[int, str] if multiple types are intended.",
+          "replacements": [],
+          "confidence": 0.9,
+          "is_auto_applicable": false,
+          "diff_preview": null,
+          "requires_user_review": true
+        }
+      ],
+      "explanation": "A variable with an explicit type annotation was assigned an expression of an incompatible type. Expected type 'int', but observed 'str'. Provenance: Deterministically verified by AST semantic checking rules."
+    },
+    {
+      "id": "TM007-2d76d457",
+      "message": "Variable 'retries' previously established as type 'int' reassigned to incompatible type 'list[int]'.",
+      "category": "type_mismatch",
+      "severity": "warning",
+      "location": {
+        "file_path": "demo_semantic_analysis.py",
+        "line": 31,
+        "column": 5,
+        "end_line": 31,
+        "end_column": 24
+      },
+      "origin": "rule_based",
+      "is_confirmed": true,
+      "expected_type": {
+        "raw_type": "int",
+        "is_inferred": false,
+        "type_args": [],
+        "confidence": null,
+        "notes": null
+      },
+      "observed_type": {
+        "raw_type": "list[int]",
+        "is_inferred": false,
+        "type_args": [],
+        "confidence": null,
+        "notes": null
+      },
+      "ml_prediction": null,
+      "rule_id": "TM007_INCOMPATIBLE_REASSIGNMENT",
+      "suggested_fixes": [],
+      "explanation": "An expression combines incompatible data types where Python requires matching or explicitly convertible types. Expected type 'int', but observed 'list[int]'. Provenance: Deterministically verified by AST semantic checking rules."
+    }
+  ],
+  "summary": {
+    "total_findings": 7,
+    "rule_based_findings": 7,
+    "ml_predicted_findings": 0,
+    "errors_count": 6,
+    "warnings_count": 1,
+    "syntax_errors_count": 0,
+    "category_counts": {
+      "incompatible_return": 1,
+      "type_mismatch": 2,
+      "unsupported_operand": 1,
+      "argument_count_mismatch": 1,
+      "argument_type_mismatch": 1,
+      "invalid_assignment": 1
+    },
+    "severity_counts": {
+      "error": 6,
+      "warning": 1
+    },
+    "execution_time_ms": 1.01,
+    "lines_analyzed": 24
+  },
+  "server_version": "0.1.0"
+}

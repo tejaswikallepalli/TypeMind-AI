@@ -1,0 +1,380 @@
+[
+  {
+    "id": "SYN-NOERR-001",
+    "code": "def add_integers(a: int, b: int) -> int:\n    return a + b",
+    "target_label": "no_error",
+    "category": "valid",
+    "group_id": "numeric_ops",
+    "origin": "synthetic",
+    "description": "Valid integer arithmetic with matching return type"
+  },
+  {
+    "id": "SYN-NOERR-002",
+    "code": "def calculate_ratio(num: int, denom: float) -> float:\n    return num / denom",
+    "target_label": "no_error",
+    "category": "valid",
+    "group_id": "numeric_ops",
+    "origin": "synthetic",
+    "description": "Valid division producing float with matching float annotation"
+  },
+  {
+    "id": "SYN-NOERR-003",
+    "code": "def greet_user(prefix: str, name: str) -> str:\n    return prefix + name",
+    "target_label": "no_error",
+    "category": "valid",
+    "group_id": "string_ops",
+    "origin": "synthetic",
+    "description": "Valid string concatenation"
+  },
+  {
+    "id": "SYN-NOERR-004",
+    "code": "def repeat_string(text: str, times: int) -> str:\n    return text * times",
+    "target_label": "no_error",
+    "category": "valid",
+    "group_id": "string_ops",
+    "origin": "synthetic",
+    "description": "Valid string repetition with integer factor"
+  },
+  {
+    "id": "SYN-NOERR-005",
+    "code": "def merge_lists(first: list, second: list) -> list:\n    return first + second",
+    "target_label": "no_error",
+    "category": "valid",
+    "group_id": "collection_ops",
+    "origin": "synthetic",
+    "description": "Valid list concatenation"
+  },
+  {
+    "id": "SYN-NOERR-006",
+    "code": "def compute_area(width: float, height: float) -> float:\n    return width * height\narea = compute_area(4.5, 2.0)",
+    "target_label": "no_error",
+    "category": "valid",
+    "group_id": "function_calls",
+    "origin": "synthetic",
+    "description": "Valid function definition and call with correct argument types"
+  },
+  {
+    "id": "SYN-NOERR-007",
+    "code": "def compute_volume(l: float, w: float, h: float = 1.0) -> float:\n    return l * w * h\nvol = compute_volume(3.0, 4.0)",
+    "target_label": "no_error",
+    "category": "valid",
+    "group_id": "function_calls",
+    "origin": "synthetic",
+    "description": "Valid function call utilizing default argument value"
+  },
+  {
+    "id": "SYN-NOERR-008",
+    "code": "user_id: int = 1001\nuser_id = user_id + 1",
+    "target_label": "no_error",
+    "category": "valid",
+    "group_id": "assignments",
+    "origin": "synthetic",
+    "description": "Valid annotated integer assignment and consistent reassignment"
+  },
+  {
+    "id": "SYN-NOERR-009",
+    "code": "is_ready: bool = True\nis_ready = False",
+    "target_label": "no_error",
+    "category": "valid",
+    "group_id": "assignments",
+    "origin": "synthetic",
+    "description": "Valid boolean variable assignment and update"
+  },
+  {
+    "id": "SYN-NOERR-010",
+    "code": "def build_tuple(a: int, b: str) -> tuple:\n    return (a, b)",
+    "target_label": "no_error",
+    "category": "valid",
+    "group_id": "collection_ops",
+    "origin": "synthetic",
+    "description": "Valid tuple creation and matching return type"
+  },
+  {
+    "id": "SYN-CONCAT-001",
+    "code": "def format_badge(label: str, rank: int) -> str:\n    return label + rank",
+    "target_label": "type_mismatch",
+    "category": "binary_op",
+    "group_id": "str_num_concat",
+    "origin": "synthetic",
+    "description": "Concatenating string with integer without conversion"
+  },
+  {
+    "id": "SYN-CONCAT-002",
+    "code": "def format_price(amount: float, symbol: str) -> str:\n    return amount + symbol",
+    "target_label": "type_mismatch",
+    "category": "binary_op",
+    "group_id": "str_num_concat",
+    "origin": "synthetic",
+    "description": "Concatenating float with string operand"
+  },
+  {
+    "id": "SYN-CONCAT-003",
+    "code": "prefix = \"code_\"\nfull_code = prefix + 42",
+    "target_label": "type_mismatch",
+    "category": "binary_op",
+    "group_id": "str_num_concat",
+    "origin": "synthetic",
+    "description": "Top-level binary addition of string literal and integer literal"
+  },
+  {
+    "id": "SYN-CONCAT-004",
+    "code": "def attach_status(name: str, active: bool) -> str:\n    return name + active",
+    "target_label": "type_mismatch",
+    "category": "binary_op",
+    "group_id": "str_num_concat",
+    "origin": "synthetic",
+    "description": "String concatenation with boolean value"
+  },
+  {
+    "id": "SYN-CONCAT-005",
+    "code": "items = [1, 2]\ncombined = items + 5",
+    "target_label": "type_mismatch",
+    "category": "binary_op",
+    "group_id": "collection_concat",
+    "origin": "synthetic",
+    "description": "Concatenating list with integer scalar"
+  },
+  {
+    "id": "SYN-CONCAT-006",
+    "code": "pair = (1, 2)\nmerged = pair + [3, 4]",
+    "target_label": "type_mismatch",
+    "category": "binary_op",
+    "group_id": "collection_concat",
+    "origin": "synthetic",
+    "description": "Concatenating tuple and list together"
+  },
+  {
+    "id": "SYN-ARITH-001",
+    "code": "def subtract_tags(tag1: str, tag2: str) -> str:\n    return tag1 - tag2",
+    "target_label": "unsupported_operand",
+    "category": "binary_op",
+    "group_id": "invalid_arithmetic",
+    "origin": "synthetic",
+    "description": "Unsupported subtraction between string objects"
+  },
+  {
+    "id": "SYN-ARITH-002",
+    "code": "def multiply_words(w1: str, w2: str) -> str:\n    return w1 * w2",
+    "target_label": "unsupported_operand",
+    "category": "binary_op",
+    "group_id": "invalid_arithmetic",
+    "origin": "synthetic",
+    "description": "Multiplication between two string objects"
+  },
+  {
+    "id": "SYN-ARITH-003",
+    "code": "def divide_text(text: str, factor: int) -> str:\n    return text / factor",
+    "target_label": "unsupported_operand",
+    "category": "binary_op",
+    "group_id": "invalid_arithmetic",
+    "origin": "synthetic",
+    "description": "True division applied to string object"
+  },
+  {
+    "id": "SYN-ARITH-004",
+    "code": "def offset_none(val: None, delta: int) -> int:\n    return val + delta",
+    "target_label": "unsupported_operand",
+    "category": "binary_op",
+    "group_id": "none_arithmetic",
+    "origin": "synthetic",
+    "description": "Arithmetic addition involving None operand"
+  },
+  {
+    "id": "SYN-ARITH-005",
+    "code": "def subtract_lists(l1: list, l2: list) -> list:\n    return l1 - l2",
+    "target_label": "unsupported_operand",
+    "category": "binary_op",
+    "group_id": "invalid_arithmetic",
+    "origin": "synthetic",
+    "description": "Unsupported subtraction operator between lists"
+  },
+  {
+    "id": "SYN-ARITH-006",
+    "code": "d1 = {'a': 1}\nd2 = {'b': 2}\nmerged = d1 + d2",
+    "target_label": "unsupported_operand",
+    "category": "binary_op",
+    "group_id": "invalid_arithmetic",
+    "origin": "synthetic",
+    "description": "Addition operator applied to dictionaries"
+  },
+  {
+    "id": "SYN-ARGCNT-001",
+    "code": "def calculate_box_area(w: float, h: float) -> float:\n    return w * h\nres = calculate_box_area(10.0)",
+    "target_label": "argument_count_mismatch",
+    "category": "call",
+    "group_id": "arg_count",
+    "origin": "synthetic",
+    "description": "Missing required second argument in function call"
+  },
+  {
+    "id": "SYN-ARGCNT-002",
+    "code": "def square_number(x: int) -> int:\n    return x * x\nres = square_number(5, 10)",
+    "target_label": "argument_count_mismatch",
+    "category": "call",
+    "group_id": "arg_count",
+    "origin": "synthetic",
+    "description": "Passing two arguments to a single-parameter function"
+  },
+  {
+    "id": "SYN-ARGCNT-003",
+    "code": "def format_full_name(first: str, last: str) -> str:\n    return first + ' ' + last\nres = format_full_name()",
+    "target_label": "argument_count_mismatch",
+    "category": "call",
+    "group_id": "arg_count",
+    "origin": "synthetic",
+    "description": "Zero arguments provided to function requiring two"
+  },
+  {
+    "id": "SYN-ARGCNT-004",
+    "code": "def triple_sum(a: int, b: int, c: int) -> int:\n    return a + b + c\nres = triple_sum(1, 2)",
+    "target_label": "argument_count_mismatch",
+    "category": "call",
+    "group_id": "arg_count",
+    "origin": "synthetic",
+    "description": "Provided two arguments when three are required"
+  },
+  {
+    "id": "SYN-ARGCNT-005",
+    "code": "def ping_host(host: str, port: int, timeout: float = 3.0) -> bool:\n    return True\nping_host('127.0.0.1')",
+    "target_label": "argument_count_mismatch",
+    "category": "call",
+    "group_id": "arg_count",
+    "origin": "synthetic",
+    "description": "Missing required port argument while optional timeout was omitted"
+  },
+  {
+    "id": "SYN-ARGTYP-001",
+    "code": "def scale_metric(factor: float) -> float:\n    return factor * 2.0\nval = scale_metric('ten')",
+    "target_label": "argument_type_mismatch",
+    "category": "call",
+    "group_id": "arg_type",
+    "origin": "synthetic",
+    "description": "Passing string argument to float parameter"
+  },
+  {
+    "id": "SYN-ARGTYP-002",
+    "code": "def capitalize_name(name: str) -> str:\n    return name.upper()\nres = capitalize_name(999)",
+    "target_label": "argument_type_mismatch",
+    "category": "call",
+    "group_id": "arg_type",
+    "origin": "synthetic",
+    "description": "Passing integer argument to string parameter"
+  },
+  {
+    "id": "SYN-ARGTYP-003",
+    "code": "def increment_counter(step: int) -> int:\n    return step + 1\nres = increment_counter([1, 2])",
+    "target_label": "argument_type_mismatch",
+    "category": "call",
+    "group_id": "arg_type",
+    "origin": "synthetic",
+    "description": "Passing list argument to integer parameter"
+  },
+  {
+    "id": "SYN-ARGTYP-004",
+    "code": "def invert_sign(x: int) -> int:\n    return -x\nres = invert_sign(None)",
+    "target_label": "argument_type_mismatch",
+    "category": "call",
+    "group_id": "arg_type",
+    "origin": "synthetic",
+    "description": "Passing None argument to integer parameter"
+  },
+  {
+    "id": "SYN-ARGTYP-005",
+    "code": "def compute_tax(rate: float) -> float:\n    return 100.0 * rate\nval = compute_tax(rate='free')",
+    "target_label": "argument_type_mismatch",
+    "category": "call",
+    "group_id": "arg_type",
+    "origin": "synthetic",
+    "description": "Passing string keyword argument to float parameter"
+  },
+  {
+    "id": "SYN-RET-001",
+    "code": "def compute_discount(rate: float) -> float:\n    if rate < 0.0:\n        return 'invalid discount'\n    return 100.0 * (1.0 - rate)",
+    "target_label": "incompatible_return",
+    "category": "return",
+    "group_id": "return_mismatch",
+    "origin": "synthetic",
+    "description": "Returning string literal from function annotated to return float"
+  },
+  {
+    "id": "SYN-RET-002",
+    "code": "def get_user_id() -> int:\n    return 'UID_1001'",
+    "target_label": "incompatible_return",
+    "category": "return",
+    "group_id": "return_mismatch",
+    "origin": "synthetic",
+    "description": "Returning string from function annotated to return int"
+  },
+  {
+    "id": "SYN-RET-003",
+    "code": "def get_record_count() -> int:\n    return None",
+    "target_label": "incompatible_return",
+    "category": "return",
+    "group_id": "return_mismatch",
+    "origin": "synthetic",
+    "description": "Returning None from function annotated with non-optional int"
+  },
+  {
+    "id": "SYN-RET-004",
+    "code": "def fetch_items() -> list:\n    return {'a': 1, 'b': 2}",
+    "target_label": "incompatible_return",
+    "category": "return",
+    "group_id": "return_mismatch",
+    "origin": "synthetic",
+    "description": "Returning dict from function annotated to return list"
+  },
+  {
+    "id": "SYN-RET-005",
+    "code": "def format_status() -> str:\n    return 500",
+    "target_label": "incompatible_return",
+    "category": "return",
+    "group_id": "return_mismatch",
+    "origin": "synthetic",
+    "description": "Returning int from function annotated to return str"
+  },
+  {
+    "id": "SYN-ASSIGN-001",
+    "code": "active_users: int = 'twenty'",
+    "target_label": "invalid_assignment",
+    "category": "assignment",
+    "group_id": "assignment_mismatch",
+    "origin": "synthetic",
+    "description": "Assigning string literal to variable explicitly annotated as int"
+  },
+  {
+    "id": "SYN-ASSIGN-002",
+    "code": "user_status: str = 200",
+    "target_label": "invalid_assignment",
+    "category": "assignment",
+    "group_id": "assignment_mismatch",
+    "origin": "synthetic",
+    "description": "Assigning int literal to variable annotated as str"
+  },
+  {
+    "id": "SYN-ASSIGN-003",
+    "code": "ratio: float = '1.5'",
+    "target_label": "invalid_assignment",
+    "category": "assignment",
+    "group_id": "assignment_mismatch",
+    "origin": "synthetic",
+    "description": "Assigning string to variable annotated as float"
+  },
+  {
+    "id": "SYN-ASSIGN-004",
+    "code": "is_admin: bool = 100.5",
+    "target_label": "invalid_assignment",
+    "category": "assignment",
+    "group_id": "assignment_mismatch",
+    "origin": "synthetic",
+    "description": "Assigning float to variable annotated as bool"
+  },
+  {
+    "id": "SYN-ASSIGN-005",
+    "code": "members: list = {'key': 'val'}",
+    "target_label": "invalid_assignment",
+    "category": "assignment",
+    "group_id": "assignment_mismatch",
+    "origin": "synthetic",
+    "description": "Assigning dict to variable annotated as list"
+  }
+]
